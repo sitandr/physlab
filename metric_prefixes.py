@@ -1,4 +1,4 @@
-from better_round import better_round
+from . import better_round
 
 prefixes = {'K': 3,
             'M': 6,
@@ -19,7 +19,7 @@ def to_prefix(number, signs = None):
             return '0'
       
       if signs != None:
-            number = better_round(number, signs)
+            number = better_round.better_round(number, signs)
             
       m = np.log10(abs(number))
       max_ = ''
@@ -34,5 +34,5 @@ def to_prefix(number, signs = None):
       if signs == None:
             return str(round(number/10**max_mult, 9)) + max_
       else:
-            return str(better_round(number/10**max_mult, signs)) + max_
+            return str(better_round.better_round(number/10**max_mult, signs)) + max_
 

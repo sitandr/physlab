@@ -1,6 +1,6 @@
 from typing import Union, List, Callable
 import random
-import better_round
+from . import better_round
 
 Num = Union[int, float]
 
