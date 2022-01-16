@@ -20,6 +20,12 @@ class dispersed_value:
         v = better_round.round_like(self.value, d)
         return '(' + str(v) + ' ± ' + str(d) + ')'
 
+    def __mul__(self, other: Num):
+        return dispersed_value(self.value*other, self.disperse*other)
+
+    def __truediv__(self, other: Num):
+        return dispersed_value(self.value/other, self.disperse/other)
+
 def experimental_devariate(func: Callable[[Num], Num], x: Num,
                            y: Union[Num, None] = None, dx: Union[Num, None] = None,
                            log: bool = False) -> float: 
