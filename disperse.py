@@ -55,6 +55,11 @@ def disperse(enable_tuple_input: bool = True,
              enable_tuple_output: bool = False,
              log: bool = False):
     
+    """
+    Decorator for function to be able work with dispersed values
+    (possibly just tuples like "(value, disperse)" )
+    """
+    
     def act_disperse(func: Callable[..., Num]):
         def dispersed_func(*args, **kw):
 
