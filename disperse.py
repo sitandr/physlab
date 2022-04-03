@@ -8,7 +8,7 @@ class dispersed_value:
     value = 0
     disperse = 0
 
-    def __init__(self, v, d):
+    def __init__(self, v, d = 0):
         self.value = v
         self.disperse = d
 
@@ -16,7 +16,7 @@ class dispersed_value:
         return '(' + str(self.value) + ' ± ' + str(self.disperse) + ')'
 
     def __str__(self):
-        d = better_round.better_round(self.disperse, 2)
+        d = better_round.round_error(self.disperse)
         v = better_round.round_like(self.value, d)
         return '(' + str(v) + ' ± ' + str(d) + ')'
 
